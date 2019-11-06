@@ -1,0 +1,45 @@
+<div class="container">
+      <div class="row">
+        <h1>Eat The Burger</h1>
+        <panel>
+                <div class="form-group">
+                    <label for="newburger">Add Burger:</label>
+                    <input type="text" id="newburger" name="burger">
+                   
+                    <button style="height: 20px;" type="submit" id="addburger">Submit</button>
+                </div>
+        </panel>
+    </div>
+    <div class="row">
+        <div id="add-burger" class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="new_burger"><strong>New Burgers</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                            {{#unless devoured}}
+                                <span><strong> {{this.id}} - {{this.burger}} </strong></span>
+                                <button type="button" class="eatburger" id ="eatbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}">Eat It!!</button>
+                                <hr>
+                            {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="devoured"><strong>Devoured Burgers</strong></div>
+                <div class="panel-body">
+                    <ul>
+                        {{#each burgers}}
+                            {{#if devoured}}
+                                <span><strong> {{this.id}} - {{this.burger}} </strong></span>
+                                <hr>
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

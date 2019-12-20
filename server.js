@@ -1,5 +1,6 @@
 let express = require("express");
 let exphbs = require("express-handlebars");
+// let mysql = require("mysql");
 
 let app =express();
 
@@ -16,5 +17,5 @@ app.use('/', routes);
 
 app.listen(PORT, function() {
     // Log (server-side) when our server has started
-    console.log("Server listening on: http://localhost:" + PORT);
+    console.log("Server listening on: http://localhost: " + PORT);
 });
